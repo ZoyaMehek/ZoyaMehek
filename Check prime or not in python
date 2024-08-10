@@ -1,0 +1,98 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPCF2oeqwyZdOdgh4zrXGBF",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ZoyaMehek/ZoyaMehek/blob/main/Check%20prime%20or%20not%20in%20python\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Checking Weather Prime or Not"
+      ],
+      "metadata": {
+        "id": "jggxOg0eiJl1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "\n",
+        "def is_prime(num):\n",
+        "    # Numbers less than or equal to 1 are not prime\n",
+        "    if num <= 1:\n",
+        "        return False\n",
+        "\n",
+        "    # 2 and 3 are prime numbers\n",
+        "    if num <= 3:\n",
+        "        return True\n",
+        "\n",
+        "    # Eliminate even numbers and multiples of 3\n",
+        "    if num % 2 == 0 or num % 3 == 0:\n",
+        "        return False\n",
+        "\n",
+        "    # Check divisibility from 5 to sqrt(num)\n",
+        "    i = 5\n",
+        "    while i * i <= num:\n",
+        "        if num % i == 0 or num % (i + 2) == 0:\n",
+        "            return False\n",
+        "        i += 6\n",
+        "\n",
+        "    return True\n",
+        "\n",
+        "def main():\n",
+        "    # Read number from user\n",
+        "    number = int(input(\"Enter a number: \"))\n",
+        "\n",
+        "    # Check if the number is prime\n",
+        "    if is_prime(number):\n",
+        "        print(f\"{number} is a prime number.\")\n",
+        "    else:\n",
+        "        print(f\"{number} is not a prime number.\")\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    main()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zVJaeGysh2St",
+        "outputId": "9b834a3d-69eb-43e2-dcf0-86e2812265ce"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a number: 2\n",
+            "2 is a prime number.\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
